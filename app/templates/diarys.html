@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block title %}Flasky - Diary{% endblock %}
+{% block content %}
+{% for diary in diarys %}
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3>
+				{{ diary.title }}.
+			</h3>
+			<p>
+                 {% if diary.body_html %}
+                    {{ diary.body_html | safe }}
+                {% else %}
+                    {{ diary.body }}
+                {% endif %}
+
+			</p><img alt="140x140" src={{ diary.src }} />
+
+
+		</div>
+	</div>
+</div>
+{%endfor%}
+{% endblock %}

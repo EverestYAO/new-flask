@@ -1,0 +1,22 @@
+<ul class="diarys">
+    {% for diary in diarys %}
+    <li class="diary">
+        <div class="diary-content">
+            <div class="diary-date">{{ moment(diary.timestamp).fromNow() }}</div>
+            <div class="diary-body">
+                {% if diary.body_html %}
+                    {{ diary.body_html | safe }}
+                {% else %}
+                    {{ diary.body }}
+                {% endif %}
+            </div>
+            <div class="diary-footer">
+                <a href="{{ url_for('.diary', id=diary.id) }}">
+                    <span class="label label-default">Permalink</span>
+                </a>
+
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

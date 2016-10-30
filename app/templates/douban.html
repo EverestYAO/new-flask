@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+{% block title %}Leon blog{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row">
+				{% for douban in doubans %}
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" src={{ douban.pic }} />
+						<div class="caption">
+							<h3>
+								{{ douban.title }}
+							</h3>
+							<p>
+								<strong>{{douban.rating}}</strong>
+								{{ douban.body[:50] }}
+							</p>
+							<p>
+							<a class="btn btn-info" href="{{douban.url}}">详情</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				{%endfor%}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, '.douban') }}
+</div>
+{% endif %}
+
+{% endblock %}
