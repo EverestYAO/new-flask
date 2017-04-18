@@ -10,8 +10,8 @@ class Config:
     MAIL_SERVER = 'smtp.163.com'
     MAIL_PORT = 25
     MAIL_USE_TLS = True
-    MAIL_USERNAME = '18677522661@163.com'
-    MAIL_PASSWORD = 'pegasus405'
+    MAIL_USERNAME = 
+    MAIL_PASSWORD = 
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
     FLASKY_MAIL_SENDER = '18677522661@163.com'
     FLASKY_ADMIN = 'zaojue405@aliyun.com'
